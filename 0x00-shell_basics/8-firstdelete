@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ -f /tmp/holberton/betty ];then rm -r /tmp/holberton/betty;else mv betty /tmp/holberton | echo "file betty doesn't exists";fi;echo
+if [ -f /tmp/holberton/betty ];then rm -r /tmp/holberton/betty;else mv betty /tmp/holberton | echo "file betty doesn't exists";fi
