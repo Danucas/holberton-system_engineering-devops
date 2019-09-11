@@ -1,0 +1,2 @@
+#!/bin/bash
+if [ -f /tmp/holberton ] ; then rm -r /tmp/holberton ; else echo "dir doesn't exists";fi;echo
