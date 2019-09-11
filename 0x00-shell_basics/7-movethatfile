@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ -f /tmp/betty ];then mv /tmp/betty /tmp/holberton/betty ; else touch betty && mv betty /tmp && mv /tmp/betty /tmp/holberton/betty  ; echo "betty doesn't exists, but don't worry it was created and moved to /tmp/holberton";fi
+mv /tmp/betty /tmp/holberton/betty
