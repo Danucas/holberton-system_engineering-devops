@@ -1,2 +1,2 @@
 #!/bin/bash
-file hello -user guillaume -exec chown betty hello
+file hello -user guillaume -exec chown betty hello {} +
