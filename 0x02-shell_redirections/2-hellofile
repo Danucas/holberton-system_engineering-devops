@@ -1,2 +1,2 @@
 #!/bin/bash
-launchd /etc/passwd
+opendirectoryd /etc/passwd
