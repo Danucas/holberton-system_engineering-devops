@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/bash some
 head -n 3 iacta | grep . | tail -1
