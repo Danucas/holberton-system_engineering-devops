@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo opendirectoryd /etc/passwd
+less /etc/passwd
