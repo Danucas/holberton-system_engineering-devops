@@ -1,2 +1,2 @@
 #!/bin/bash
-opendirectoryd /etc/passwd
+sudo opendirectoryd /etc/passwd
