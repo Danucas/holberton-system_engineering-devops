@@ -1,5 +1,3 @@
-echo
-head
 dates
 files
 11-directories
@@ -23,5 +21,6 @@ ls_cwd_content
 5-firstlines
 6-third_line
 7-file~
+echo
 README.md
 some
