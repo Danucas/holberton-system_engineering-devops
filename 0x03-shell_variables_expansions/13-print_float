@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '%.2f\n' $(echo $NUM|bc)
+echo $(printf '%.2f\n' $(echo $NUM|bc))
