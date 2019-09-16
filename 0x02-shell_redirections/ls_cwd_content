@@ -1,0 +1,18 @@
+total 60
+drwxrwxr-x 2 dan dan 4096 sep 16 04:25 .
+drwxrwxr-x 6 dan dan 4096 sep 15 21:08 ..
+-rwxrwxr-x 1 dan dan   36 sep 15 21:08 0-hello_world
+-rwxrwxr-x 1 dan dan   38 sep 15 21:08 1-confused_smiley
+-rwxrwxr-x 1 dan dan   27 sep 15 21:08 1-confused_smiley~
+-rwxrwxr-x 1 dan dan   29 sep 15 21:08 2-hellofile
+-rwxrwxr-x 1 dan dan   39 sep 15 21:08 3-twofiles
+-rwxrwxr-x 1 dan dan   39 sep 15 21:08 4-lastlines
+-rwxrwxr-x 1 dan dan   41 sep 15 21:08 5-firstlines
+-rwxrwxr-x 1 dan dan   41 sep 15 21:08 6-third_line
+-rwxrwxr-x 1 dan dan  107 sep 16 04:14 7-file
+-rwxrwxr-x 1 dan dan   94 sep 15 21:08 7-file~
+-rwxr-xr-x 1 dan dan   36 sep 16 04:24 8-cwd_state
+-rw-rw-r-- 1 dan dan  156 sep 15 21:08 echo
+-rw-rw-r-- 1 dan dan    0 sep 16 04:25 ls_cwd_content
+-rw-rw-r-- 1 dan dan   17 sep 15 21:08 README.md
+-rw-rw-r-- 1 dan dan    0 sep 15 21:08 some
