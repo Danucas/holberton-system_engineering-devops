@@ -1,0 +1,2 @@
+#!/bin/bash
+perl -ple 's/A/Z/g' | perl -ple 's/c/e/g'
