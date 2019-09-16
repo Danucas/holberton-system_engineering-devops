@@ -1,0 +1,2 @@
+#!/bin/bash
+find ./* -type d>files|ls|<files wc -l
