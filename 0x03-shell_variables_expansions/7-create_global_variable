@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'export HOLBERTON=Betty' >>~/.profile
+echo 'export HOLBERTON=Betty' >>~/.bash_login
