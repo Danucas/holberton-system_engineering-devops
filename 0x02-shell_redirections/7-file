@@ -1,4 +1,4 @@
 #!/bin/bash
-touch \\\*\\\\\'\""Holberton School"\"
-ls -l
-rm -r \\\*\\\\\'\""Holberton School"\"
+touch \*\\'"Holberton School"\'\\\*\$\?\*\*\*\*\*\:\)
+ls
+rm 
