@@ -1,0 +1,11 @@
+#!/bin/bash
+
+wat=$((5#$(echo $WATER | tr "water" "01234")))
+str=$((5#$(echo $STIR | tr "stir." "01234")))
+
+esp=$(echo "holberton" | tr "behlnort" "01234567")
+res=$((wat + str))
+echo $res
+res=$((10#$(echo $res)))
+res=$(echo $res | tr "01234567" "behlnort")
+echo -e "Water: $wat , Stir: $str\nExpected: $esp\nResult: $res"
