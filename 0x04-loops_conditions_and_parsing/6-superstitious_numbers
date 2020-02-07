@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+c=1
+while (( c<21 ))
+do
+    echo "$c"
+    case "$c" in
+	4) echo "bad luck from China"
+	   ;;
+	9) echo "bad luck from Japan"
+	   ;;
+	17) echo "bad luck from Italy"
+	   ;;
+    esac
+    c=$(( c+1 ))
+done

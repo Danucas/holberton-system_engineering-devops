@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for entry in "$PWD"/*
+do
+    entry=$( echo "$entry" | rev | cut -d'/' -f 1 | rev )
+    short=$( echo "$entry" | cut -d"-" -f2- )
+    echo "$short"
+done
