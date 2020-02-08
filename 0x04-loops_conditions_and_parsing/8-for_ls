@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Oh yeah get all my files without that anoying index
 for entry in "$PWD"/*
 do
     entry=$( echo "$entry" | rev | cut -d'/' -f 1 | rev )

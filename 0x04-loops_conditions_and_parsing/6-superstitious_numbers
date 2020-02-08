@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#more and more bad luck baby
 c=1
 while (( c<21 ))
 do

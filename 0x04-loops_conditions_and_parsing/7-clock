@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Tik tok the time is running baby
 hour=0
 while (( hour < 13 ))
 do

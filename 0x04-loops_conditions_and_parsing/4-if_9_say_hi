@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#printing hi at the 9th iteration
 c=0
 while (( c<10 ))
 do

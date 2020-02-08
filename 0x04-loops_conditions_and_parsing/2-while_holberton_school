@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#print holberton school ten time using just while
 c=0
 while (( c<10 ))
 do
