@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#check if file exits
+if test -e "holbertonschool"
+then
+    echo "holbertonschool file exists"
+    count=$( stat -c %s "holbertonschool" )
+    if [ "$count" = "0" ]
+    then
+	echo "holbertonschool file is empty"
+    else
+	echo "holbertonschool file is not empty"
+    fi
+    if test -f "holbertonschool"
+    then
+	echo "holbertonschool is a regular file"
+    fi
+else
+    echo "holbertonschool file does not exists"
+fi
