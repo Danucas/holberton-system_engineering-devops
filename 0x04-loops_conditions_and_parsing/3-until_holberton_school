@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #print Holberton School 10 times until
 c=0
-until [ $c -gt 10 ]
+until [ $c -gt 9 ]
 do
     echo "Holberton School"
     c=$(( c+1 ))
