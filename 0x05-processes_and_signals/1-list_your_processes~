@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#this prints all processes including tty's user oriented display an hierarchy
-ps aux -H
