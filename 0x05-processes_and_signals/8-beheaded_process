@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#kill buzz
+pid=$(pgrep -f "7-highlander")
+#echo "$pid"
+id=$( ps -o ppid= "$pid" | xargs )
+pkill -9 -P "$id"
