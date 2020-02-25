@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-res = ARGV[0] #.scan(/from:([^\]]+)|to:([^\]]+)|flags:([^\]]+)/)
+res = ARGV[0].scan(/from:([^\]]+)|to:([^\]]+)|flags:([^\]]+)/)
 fin = []
 for item in res
   for str in item
