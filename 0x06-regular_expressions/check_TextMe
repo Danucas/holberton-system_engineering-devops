@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+function ctrl_c()
+{
+    exit 1
+}
+
+trap ctrl_c INT
+
+total=$(wc -l "text_messages.log" | cut -d " " -f1)
+echo $total
+while read line
+do
+    echo $(./100-textme.rb "$line") >> regexed
+    echo -ne "\\r"$(./100-textme.rb "$line")"\n"
+    echo -ne "left: ${total}"
+    total=$(( $total - 1 ))
+done < text_messages.log
+
+
+
