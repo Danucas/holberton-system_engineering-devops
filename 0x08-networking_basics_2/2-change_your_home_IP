@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cp /etc/hosts ~/hosts.new
+sed -i "s/127.0.0.1/127.0.0.2/g" ~/hosts.new
+sed -i "s/\tlocalhost/\tlocalhost\n8.8.8.8\tfacebook.com/g" ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
