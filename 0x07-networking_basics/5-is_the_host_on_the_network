@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+#this script makes 5 pings
 if [ "$1" != "" ]
 then
-	ping -c 5 $1
+	ping -c 5 "$1"
 else
     echo "Usage: ${0:2} {IP_ADDRESS}"
 fi
