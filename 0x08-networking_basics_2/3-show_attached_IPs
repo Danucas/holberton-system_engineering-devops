@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-ip -4 addr | grep inet | cut -d "/" -f1 |
-    while read line
-    do
-	echo $(echo "$line" | xargs | cut -d " " -f2)
-    done
+#this shows the attached ipv4
+for line in $(ip -4 addr | grep inet | cut -d "/" -f1)
+do
+    if [ "$line" != "inet" ]
+    then
+	l=$(echo "$line" | xargs | cut -d " " -f2)
+	echo "$l"
+    fi
+done
