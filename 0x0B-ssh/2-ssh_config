@@ -1,0 +1,7 @@
+Host *
+     PasswordAuthentication no
+     RSAAuthentication yes
+     IdentityFile ~/.ssh/holberton
+     SendEnv LANG LC_*
+     HashKnownHosts yes
+     GSSAPIAuthentication yes
