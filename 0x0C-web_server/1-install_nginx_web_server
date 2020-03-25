@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installing nginx on server
+# Installing nginx on server listen to port 80 an return html single text page
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
@@ -13,7 +13,9 @@ sudo chmod -R g+w /var/www/html
 
 #sudo cp /etc/nginx/sites-available/default ~/nginx_backup/sites-available/default_backup
 
-sudo echo -e "server{\n\tlisten 80 default_server;\n\tserver_name _;\n\troot /var/www/html;\n\tindex index.html index.htm;\n\tlocation / {\n\t\ttry_files $uri $uri/ =404;\n\t}\n}" | sudo tee /etc/nginx/sites-available/default
+sudo echo -e "server{\n\tlisten 80 default_server;\n\tserver_name localhost;\n\troot /var/www/html;\n\tindex index.html index.htm index.nginx-debian.html;\n\tlocation / {\n\t\ttry_files \$uri \$uri/ /index.html;\n\t}\n}" | sudo tee /etc/nginx/sites-available/default
+
+sudo echo 'Holberton School' | sudo tee /var/www/html/index.nginx-debian.html
 
 sudo echo 'Holberton School' | sudo tee /var/www/html/index.html
 
