@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configure location redirection rule
+file=/etc/nginx/sites-available/default
+has_redirect=$(sudo grep 'redirect_me' $file)
+if [ "$has_redirect" == "" ];then
+    echo "Reconfiguring to redirect"
+    sudo sed -i ':a;N;$!ba;s/\n}/\n    location \/redirect_me {\n\treturn 301;\n    }\n}/g' $file
+fi
+
