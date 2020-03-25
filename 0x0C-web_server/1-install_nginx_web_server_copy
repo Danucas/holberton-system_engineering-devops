@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# install nginx and configure to listen port 80 and serve a basic html string
+sudo apt-get -y update
+sudo apt-get install -y nginx nginx-full nginx-common
+#sudo ufw allow 'Nginx HTTP'
+#sudo ufw allow 80
+#sudo ufw allow ssh
+#sudo ufw enable
+sudo mkdir -p /var/www/dnart/html
+sudo chgrp -R ubuntu /var/www/dnart/html
+sudo chmod -R 755 /var/www
+sudo sed -i 's/\/usr\/share\/nginx\/html/\/var\/www\/dnart\/html/g' /etc/nginx/sites-available/default
+sudo sed -i 's/ ipv6only=on//g' /etc/nginx/sites-available/default
+echo "Holberton School" | sudo tee /var/www/dnart/html/index.html
+sudo service nginx restart
