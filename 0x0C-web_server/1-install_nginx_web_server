@@ -3,7 +3,28 @@
 
 sudo apt-get -y update && sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-
+block="/etc/nginx/sites-available/default"
+sudo tee $block > /dev/null <<EOF                                    
+server {                                                             
+ 
+    listen 80 default_server;                                        
+ 
+    listen [::]:80 default_server;                                   
+ 
+    root /var/www/html;                                              
+ 
+    index index.html index.htm index.nginx-debian.html;              
+ 
+    server_name _;                                                   
+ 
+    location / {                                                     
+ 
+        try_files \$uri \$uri/ =404;                                 
+ 
+    }                                                                
+ 
+}                                                                    
+EOF
 echo "Holberton School for the win!" > /var/www/html/index.html
 
 sudo nginx -t && sudo /etc/init.d/nginx start
