@@ -28,6 +28,6 @@ server {
  
 }                                                                    
 EOF
-echo "Holberton School for the win!" > /var/www/html/index.html
+sudo echo "Holberton School for the win!" | sudo tee /var/www/html/index.html
 
 sudo nginx -t && sudo /etc/init.d/nginx start

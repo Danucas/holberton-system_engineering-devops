@@ -36,7 +36,7 @@ server {
 }
                                                                     
 EOF
-echo "Holberton School" > /var/www/html/index.html
-echo -e "Ceci n'est pas une page" > /var/www/html/custom_404.html
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo echo -e "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 
 sudo nginx -t && sudo /etc/init.d/nginx restart
