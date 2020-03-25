@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# install nginx and configure to listen port 80 and server basic html page
+apt-get install -y nginx nginx-full nginx-common
+sudo bash 'echo "Holberton School" > /usr/share/nginx/html/index.html'
+sudo service nginx restart
