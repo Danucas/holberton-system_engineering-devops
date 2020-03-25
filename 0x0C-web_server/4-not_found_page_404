@@ -36,7 +36,7 @@ server {
 }
                                                                     
 EOF
-echo "Holberton School for the win!" > /var/www/html/index.html
-echo -e "Ceci n'est pas une page \n\n" > /var/www/html/custom_404.html
+echo "Holberton School" > /var/www/html/index.html
+echo -e "Ceci n'est pas une page" > /var/www/html/custom_404.html
 
 sudo nginx -t && sudo /etc/init.d/nginx restart
