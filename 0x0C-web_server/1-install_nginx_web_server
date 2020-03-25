@@ -15,4 +15,4 @@ sudo sed -i 's/\/usr\/share\/nginx\/html/\/var\/www\/html/g' /etc/nginx/sites-av
 sudo sed -i 's/ ipv6only=on//g' /etc/nginx/sites-available/default
 sudo mkdir -p /var/www/html
 sudo echo 'Holberton School' | sudo tee /var/www/html/index.html
-sudo service nginx start
+sudo service nginx restart
