@@ -8,6 +8,6 @@ sudo chown -R $USER:$USER /var/www/dnart/html
 sudo chmod -R 755 /var/www
 sudo sed -i 's/\/usr\/share\/nginx\/html/\/var\/www\/dnart\/html/g' /etc/nginx/sites-available/default
 sudo sed -i 's/ ipv6only=on//g' /etc/nginx/sites-available/default
-sudo sed -i 's/ localhost//g' /etc/nginx/sites-available/default
+sudo sed -i 's/ localhost/\"\"/g' /etc/nginx/sites-available/default
 echo "Holberton School" | sudo tee /var/www/dnart/html/index.html
 sudo service nginx restart
