@@ -5,6 +5,7 @@ function getHost(){
     host=$(hostname)
     if [ "${host:0:2}" == 'gc' ];then
 	host=$(echo "$host" | cut -d '-' -f 2-4)
+	sudo hostnamectl set-hostname "$host"
     fi
     echo "$host"
 }
