@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 # Configure location redirection rule
+function getHost(){
+    local host;
+    host=$(hostname)
+    if [ "${host:0:2}" == 'gc' ];then
+	host=$(echo "$host" | cut -d '-' -f 2-4)
+    fi
+    echo "$host"
+}
 sudo apt-get -y update && sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo /etc/init.d/nginx stop
@@ -15,7 +23,7 @@ server {
 
     index index.html index.htm index.nginx-debian.html;
 
-    server_name localhost;
+    server_name $(getHost);
 
     error_page 404 /custom_404.html;
 
@@ -36,7 +44,7 @@ server {
 }
                                                                     
 EOF
-sudo echo "X-Served-By: $(hostname)" | sudo tee /var/www/html/index.html
+sudo echo "X-Served-By: $(getHost)" | sudo tee /var/www/html/index.html
 sudo echo -e "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 
 sudo nginx -t && sudo /etc/init.d/nginx restart
