@@ -23,7 +23,8 @@ server {
 
     index index.html index.htm index.nginx-debian.html;
 
-    server_name $(getHost);
+    server_name localhost;
+    add_header X-Served-By $(getHost);
 
     error_page 404 /custom_404.html;
 
@@ -44,7 +45,7 @@ server {
 }
                                                                     
 EOF
-sudo echo "X-Served-By: $(getHost)" | sudo tee /var/www/html/index.html
+sudo echo "Holberton School for the win!" | sudo tee /var/www/html/index.html
 sudo echo -e "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 
 sudo nginx -t && sudo /etc/init.d/nginx restart
