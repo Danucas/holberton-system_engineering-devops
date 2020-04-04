@@ -4,4 +4,5 @@ conf_file='/etc/nginx/sites-available/default'
 conf_file2='/etc/nginx/sites-enabled/default'
 sudo sed -i 's/listen 8080/listen 80/g' "$conf_file" "$conf_file2"
 sudo sed -i 's/listen [::]:8080/listen [::]:80/g' "$conf_file" "$conf_file2"
+sudo sed -i 's/ipv6only=on//g' "$conf_file" "$conf_file2"
 sudo service nginx restart
