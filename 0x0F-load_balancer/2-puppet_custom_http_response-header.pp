@@ -1,8 +1,7 @@
 # Puppet manifest to configure http response on nginx
 
 exec{'update':
-    command => 'apt-get -y update',
-    path    => ['/usr/bin'],
+    command => '/usr/bin/apt-get -y update',
 }
 
 package{'nginx':
