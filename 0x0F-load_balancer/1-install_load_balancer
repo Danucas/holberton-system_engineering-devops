@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Install and configure HAProxy with roundrobin balancer
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+conf_file="/etc/haproxy/haproxy.cfg"
+sudo cp "$conf_file"{,.original}
+has=$(sudo grep "frontend" "$conf_file")
+if [ "$has" == "" ];then
+    sudo echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+    sudo tee -a "$conf_file" >> /dev/null <<EOF
+frontend load_b
+      bind *:80
+      mode http
+      default_backend back_loader
+backend back_loader
+      mode http
+      balance roundrobin
+      server 1305-web-01 35.231.236.18:80 check
+      server 1305-web-02 3.95.205.51:80 check
+EOF
+fi
+sudo service haproxy restart
