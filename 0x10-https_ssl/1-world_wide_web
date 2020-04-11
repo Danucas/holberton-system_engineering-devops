@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# list subdomain props
+
+function getAnswer(){
+	 local asw as1 as2;
+	 asw=$(dig "$2$1" | awk '/ANSWER SECTION/ {for(i=1; i<=1; i++) {getline; print}}' | tr '\t' ' ' | tr -s ' ' | cut -d ' ' -f 4-5)
+	 as1=$(echo "$asw" | cut -d ' ' -f1)
+	 as2=$(echo "$asw" | cut -d ' ' -f2)
+	 #echo "$asw"
+	 echo "The subdomain" "${2:0:-1}" "is a" "$as1" "record and points to" "$as2"
+}
+
+if [ $# -eq 1 ];then
+    getAnswer "$1" "www."
+    getAnswer "$1" "lb-01."
+    getAnswer "$1" "web-01."
+    getAnswer "$1" "web-02."
+else
+    getAnswer "$1" "$2."
+fi
