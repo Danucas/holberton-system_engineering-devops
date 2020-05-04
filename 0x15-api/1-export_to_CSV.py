@@ -33,10 +33,10 @@ def main():
                                     quoting=csv.QUOTE_ALL)
             for task in todos:
                 tmp_dict = {}
-                tmp_dict[fields[0]] = sys.argv[1]
-                tmp_dict[fields[1]] = user.get("name")
-                tmp_dict[fields[2]] = task.get("completed")
-                tmp_dict[fields[3]] = task.get("title")
+                tmp_dict[fields[0]] = str(sys.argv[1])
+                tmp_dict[fields[1]] = str(user.get("username"))
+                tmp_dict[fields[2]] = str(task.get("completed"))
+                tmp_dict[fields[3]] = str(task.get("title"))
                 writer.writerow(tmp_dict)
 
 
