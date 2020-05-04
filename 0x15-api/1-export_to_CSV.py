@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Makes requet to JSONPlaceholder API
-and saves it as .csv
+Makes request to JSONPlaceholder API
+and save response as .csv
 """
 
 
@@ -20,24 +20,15 @@ def main():
     todos = requests.get(tasks_url).json()
     # print(todos)
     user = requests.get(us_url).json()
-    # print(user)
-    doned = []
-    for val in todos:
-        if val.get("completed"):
-            doned.append(val)
-    print("Employee {} is done with tasks({}/{}):".format(user.get("name"),
-                                                          len(doned),
-                                                          len(todos)))
-    for task in doned:
-        print('\t {}'.format(task.get("title")))
-    with open("{}.csv".format(sys.argv[1]), "w") as csv_file:
-        for task in todos:
-            csv_file.write('"{}",'.format(sys.argv[1]))
-            csv_file.write('"{}",'.format(user.get("name")))
-            csv_file.write('"{}",'.format(task.get("completed")))
-            csv_file.write('"{}"'.format(task.get("title")))
-            csv_file.write('\n')
-    csv_file.close()
+    # print("user: ", user.get("id"))
+    if user.get("id"):
+        with open("{}.csv".format(sys.argv[1]), "w") as csv_file:
+            for task in todos:
+                csv_file.write('"{}",'.format(sys.argv[1]))
+                csv_file.write('"{}",'.format(user.get("name")))
+                csv_file.write('"{}",'.format(task.get("completed")))
+                csv_file.write('"{}"'.format(task.get("title")))
+                csv_file.write('\n')
 
 
 if __name__ == '__main__':
