@@ -7,6 +7,7 @@ and save response as .csv
 
 import requests
 import sys
+import csv
 
 
 def main():
@@ -23,12 +24,20 @@ def main():
     # print("user: ", user.get("id"))
     if user.get("id"):
         with open("{}.csv".format(sys.argv[1]), "w") as csv_file:
+            fields = ["USER_ID",
+                      "USER_NAME",
+                      "TASK_COMPLETED_STATUS",
+                      "TASK_TITLE"]
+            writer = csv.DictWriter(csv_file,
+                                    fieldnames=fields,
+                                    quoting=csv.QUOTE_ALL)
             for task in todos:
-                csv_file.write('"{}",'.format(sys.argv[1]))
-                csv_file.write('"{}",'.format(user.get("name")))
-                csv_file.write('"{}",'.format(task.get("completed")))
-                csv_file.write('"{}"'.format(task.get("title")))
-                csv_file.write('\n')
+                tmp_dict = {}
+                tmp_dict[fields[0]] = sys.argv[1]
+                tmp_dict[fields[1]] = user.get("name")
+                tmp_dict[fields[2]] = task.get("completed")
+                tmp_dict[fields[3]] = task.get("title")
+                writer.writerow(tmp_dict)
 
 
 if __name__ == '__main__':
