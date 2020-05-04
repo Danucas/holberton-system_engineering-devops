@@ -21,6 +21,15 @@ def main():
     # print(todos)
     user = requests.get(us_url).json()
     # print(user)
+    doned = []
+    for val in todos:
+        if val.get("completed"):
+            doned.append(val)
+    print("Employee {} is done with tasks({}/{}):".format(user.get("name"),
+                                                          len(doned),
+                                                          len(todos)))
+    for task in doned:
+        print('\t {}'.format(task.get("title")))
     with open("{}.csv".format(sys.argv[1]), "w") as csv_file:
         for task in todos:
             csv_file.write('"{}",'.format(sys.argv[1]))
