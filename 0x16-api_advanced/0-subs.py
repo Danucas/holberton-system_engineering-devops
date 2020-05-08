@@ -7,7 +7,6 @@ request for subscribers
 import requests
 import json
 import base64
-import array
 
 
 def number_of_subscribers(subreddit):
@@ -38,10 +37,15 @@ def number_of_subscribers(subreddit):
     headers = {"User-Agent": user_agent}
     headers["Authorization"] = '{} {}'.format(typ, tok)
     query["query"] = subreddit
-    query["exact"] = False
+    query["exact"] = True
+    query["include_over_18"] = True
     response = requests.post(endpoint, data=query, headers=headers)
-    subs = response.json()
-    count = 0
-    for sub in subs["subreddits"]:
-        count += sub["subscriber_count"]
-    return count
+    if response.status_code == 200:
+        subs = response.json()
+        # print(json.dumps(subs, indent=2))
+        count = 0
+        for sub in subs["subreddits"]:
+            count += sub["subscriber_count"]
+        return count
+    else:
+        return 0
