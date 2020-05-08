@@ -29,7 +29,8 @@ def sort_by_alpha(word_list):
     """
     Sorts words same amounts by alphabetical order
     """
-    del word_list["0"]
+    if "0" in word_list:
+        del word_list["0"]
     sted = sorted(list(word_list.keys()), key=lambda s: int(s))
     keys = list(reversed(sted))
     for key in keys:
@@ -85,6 +86,7 @@ def count_words(subreddit, word_list, after=None):
                 pattern = ' ' + word.lower() + ''
                 test = ' ' + post["data"]["title"].lower() + ' '
                 occurrencies = [n.start() for n in re.finditer(pattern, test)]
+                # print(len(occurrencies))
                 word_list[word] += len(occurrencies)
         if subs["data"]["after"] is None:
             word_list = sort_by_key(word_list)
