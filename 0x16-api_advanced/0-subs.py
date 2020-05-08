@@ -3,10 +3,9 @@
 Queries to the Reddit API
 request for subscribers
 """
-
-import requests
-import json
 import base64
+import json
+import requests
 
 
 def number_of_subscribers(subreddit):
