@@ -29,6 +29,7 @@ def sort_by_alpha(word_list):
     """
     Sorts words same amounts by alphabetical order
     """
+    del word_list["0"]
     sted = sorted(list(word_list.keys()), key=lambda s: int(s))
     keys = list(reversed(sted))
     for key in keys:
