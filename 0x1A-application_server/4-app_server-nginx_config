@@ -22,4 +22,8 @@ server {
     location ~ /airbnb-dynamic/number_odd_or_even/(\d+) {
         proxy_pass "http://0.0.0.0:5001/number_odd_or_even/$1/";
     }
+
+    location ~ /api/([0-9a-zA-Z/]+) {
+        proxy_pass http://0.0.0.0:5002;
+    }
 }
