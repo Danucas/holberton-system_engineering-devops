@@ -10,6 +10,9 @@ server {
     location / {
         proxy_pass http://0.0.0.0:5003;
     }
+    location /static/ {
+	proxy_pass http://0.0.0.0:5003;
+    }
 
     location /hbnb_static {
         alias /data/web_static/current/;
@@ -23,7 +26,7 @@ server {
         proxy_pass "http://0.0.0.0:5001/number_odd_or_even/$1/";
     }
 
-    location ~ /api/([0-9a-zA-Z/]+) {
+    location ~ /api/(.*)$ {
         proxy_pass http://0.0.0.0:5002;
     }
 }
