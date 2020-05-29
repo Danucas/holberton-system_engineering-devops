@@ -1,11 +1,11 @@
 # ulimit
 
-service {'nginx'
+service {'nginx':
   ensure => 'running',
   enable => true,
 }
 
-file {
+file { '/etc/default/nginx':
   ensure => present,
 } -> exec {
   notify  => Service['nginx'],
